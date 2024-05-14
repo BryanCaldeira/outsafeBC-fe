@@ -1,10 +1,10 @@
-export const API_URL = 'https://outsafebc-api.netlify.app/.netlify/functions';
+export const API_URL = 'https://amazing-bubblegum-c515bc.netlify.app/.netlify/functions';
 
-// export const API_URL = 'http://localhost:8888/.netlify/functions';
+// export const API_URL = 'http://localhost:9999/.netlify/functions';
 
 export const USER_STORAGE = 'user';
 
-export const GOOGLE_ID = '914763218338-qvq8stve1sh2d2g14dcve9kacf51agt8.apps.googleusercontent.com';
+export const GOOGLE_ID = '319234793704-njbchgvs61hl4qvk39kt7njekeluf172.apps.googleusercontent.com';
 
 export const JAWG_ACCESS_TOKEN = 'LESUiiQclmPkbbaFTaPx6M64QWgnmvYXQQXuIcownKAbCziOC3kyYUdEEqGn9wT3';
 
