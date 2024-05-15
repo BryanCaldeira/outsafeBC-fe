@@ -291,9 +291,9 @@ const getCategories = async () => {
 
     data.forEach((category) => {
       if (category.name && category.ui_settings.icon) {
-        const iconParts = category.ui_settings.icon.toLowerCase().split('-');
+        const iconParts = category.ui_settings.icon.toLowerCase();
         if (iconParts.length >= 2) {
-          arrayIcons.push(iconParts[1]);
+          arrayIcons.push(iconParts);
         }
       }
     });
