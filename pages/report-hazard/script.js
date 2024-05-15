@@ -291,16 +291,12 @@ const getCategories = async () => {
 
     data.forEach((category) => {
       if (category.name && category.ui_settings.icon) {
-        const iconParts = category.ui_settings.icon.toLowerCase();
-        if (iconParts.length >= 2) {
-          arrayIcons.push(iconParts);
-        }
+        arrayIcons.push(category.ui_settings.icon);
       }
     });
 
     for (let i = 0; i < data.length; i++) {
       const category = data[i];
-
       const categoryContainer = document.createElement('div');
       categoryContainer.classList.add('category-container');
 
