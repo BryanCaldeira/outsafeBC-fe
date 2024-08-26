@@ -39,13 +39,13 @@ const SearchBar = ({ categories }) => {
                 <i class="icon-filters sb-search-box--filter-btn--icon"></i>
               </button>
             </div>
-          
+
             <div class="sb-suggestion">
               <div class="sb-suggestion-wrapper" style="display:none"></div>
             </div>
             <div id="hazard-comp" class="hidden"></div>
           </div>
-          
+
           <div class="sb-categories">
             <div class="sb-categories-wrapper">
             ${

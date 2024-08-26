@@ -1,21 +1,19 @@
-//Models
-import ReportForm from '../../assets/models/ReportForm.js';
-import Map from '../../assets/models/Map.js';
+import { showButtonLoading, stopButtonLoading } from '../../assets/helpers/set-action-button.js';
 
 //Constants
 import { API_URL } from '../../constants.js';
-
 //Components
 import AlertPopup from '../../assets/components/AlertPopup.js';
-import Modal from '../../assets/components/Modal.js';
 import LoaderAnimation from '../../assets/components/WhiteTransition.js';
-
+import Map from '../../assets/models/Map.js';
+import Modal from '../../assets/components/Modal.js';
+//Models
+import ReportForm from '../../assets/models/ReportForm.js';
+import geocode from '../../assets/helpers/geocode.js';
 //Helpers
 import { getUserSession } from '../../assets/helpers/storage.js';
-import readImage from '../../assets/helpers/read-image.js';
-import geocode from '../../assets/helpers/geocode.js';
 import injectHeader from '../../assets/helpers/inject-header.js';
-import { showButtonLoading, stopButtonLoading } from '../../assets/helpers/set-action-button.js';
+import readImage from '../../assets/helpers/read-image.js';
 
 //Variable Declaration
 const url = new URL(window.location.href);
@@ -290,8 +288,8 @@ const getCategories = async () => {
     let arrayIcons = [];
 
     data.forEach((category) => {
-      if (category.name && category.ui_settings.icon) {
-        arrayIcons.push(category.ui_settings.icon);
+      if (category.name && category.ui_settings.detail) {
+        arrayIcons.push(category.ui_settings.detail.icon);
       }
     });
 
@@ -339,7 +337,7 @@ const getCategories = async () => {
       label.setAttribute('id', `category-${category.id}-label`);
       label.setAttribute('for', `category-${category.id}-radio`);
       label.classList.add('label-container');
-      label.innerHTML = `<img class="category-icon" src="../../assets/icons/${arrayIcons[i]}-outline.svg" alt="${arrayIcons[i]}">`;
+      label.innerHTML = `<img class="category-icon" src="../../assets/icons/${arrayIcons[i]}.svg" alt="${arrayIcons[i]}">`;
 
       const textContainer = document.createElement('div');
       textContainer.classList.add('text-container');

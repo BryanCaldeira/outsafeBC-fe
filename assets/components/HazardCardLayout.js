@@ -1,7 +1,7 @@
-import geolocationDistance from '../helpers/geolocation-distance.js';
-import { getUserLocation } from '../helpers/user-geocoordinates.js';
 import DateFormat from '../models/DateFormat.js';
 import Map from '../models/Map.js';
+import geolocationDistance from '../helpers/geolocation-distance.js';
+import { getUserLocation } from '../helpers/user-geocoordinates.js';
 
 const HazardCardLayout = ({ reports }) => {
   const userLocation = getUserLocation();
@@ -37,9 +37,9 @@ const HazardCardLayout = ({ reports }) => {
             return `
             <div
               class="sb-cards--item"
-              id="sb-card-${idx + 1}"  
+              id="sb-card-${idx + 1}"
               data-details='${JSON.stringify(item)}'>
-      
+
               <div class="report-card__heading">
                 <span class="btn__icon report-card__heading__icon" style="background-color: ${item.hazardCategory.settings.iconBackround}">
                   <i class="${item.hazardCategory.settings.icon}-outline" style="width:24px; height:24px; background-color: white"></i>
@@ -50,24 +50,24 @@ const HazardCardLayout = ({ reports }) => {
                 <i class="icon-location-pin-outline" style="background-color: var(--neutral-400)"></i>
                 <p class="text-body-2 regular">${location}</p>
               </div>
-      
+
               <div class="report-card__date_time sb-cards-info--box">
                 <div class="report-card__details">
                   <i class="icon-date" style="background-color: var(--neutral-400)"></i>
                   <p class="text-body-2 regular">${date}</p>
                 </div>
-              
+
                 <div class="report-card__details">
                   <i class="icon-time" style="background-color: var(--neutral-400)"></i>
                   <p class="text-body-2 regular">${time}</p>
                 </div>
               </div>
-      
+
               <div class="report-card__details sb-cards-info--box">
                 <i class="icon-distance" style="background-color: var(--neutral-400)"></i>
                 <p class="text-body-2 regular">${item.distance} km away</p>
               </div>
-      
+
               <button data-id="${id}" class="btn btn-secondary view-details" id="viewDetailsBtn">
                   <i class="icon-plus"></i>
                   View Details
