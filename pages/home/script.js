@@ -1,29 +1,30 @@
+import SearchBar, { SearchBarSuggestionCard } from '../../assets/components/SearchBar.js';
+import { checkPrevCenter, getPrevCenter, setPrevCenter } from '../../assets/helpers/prev-center.js';
+import { getUserLocation, setUserLocation } from '../../assets/helpers/user-geocoordinates.js';
+
 import { API_URL } from '../../constants.js';
+import AlertPopup from '../../assets/components/AlertPopup.js';
+import DateFormat from '../../assets/models/DateFormat.js';
 //Components
 import GeoMap from '../../assets/components/GeoMap.js';
-import SearchBar, { SearchBarSuggestionCard } from '../../assets/components/SearchBar.js';
 import HazardCardLayout from '../../assets/components/HazardCardLayout.js';
-import ModalFilter from '../../assets/components/ModalFilter.js';
-import AlertPopup from '../../assets/components/AlertPopup.js';
 import HazardDetailCard from '../../assets/components/HazardDetailCard.js';
-import showLoginModal from '../../assets/helpers/showLoginModal.js';
+import HazardReport from '../../assets/models/HazardReport.js';
 //Helpers
 import Loader from '../../assets/helpers/loader.js';
-import injectHTML from '../../assets/helpers/inject-html.js';
-import injectHeader from '../../assets/helpers/inject-header.js';
+//Models
+import Map from '../../assets/models/Map.js';
+import ModalFilter from '../../assets/components/ModalFilter.js';
 import apiRequest from '../../assets/helpers/api-request.js';
 import debounce from '../../assets/helpers/debounce.js';
 import geocode from '../../assets/helpers/geocode.js';
-import loadIcons from '../../assets/helpers/load-icons.js';
 import geolocationDistance from '../../assets/helpers/geolocation-distance.js';
-import { getUserSession } from '../../assets/helpers/storage.js';
-import { setPrevCenter, getPrevCenter, checkPrevCenter } from '../../assets/helpers/prev-center.js';
-//Models
-import Map from '../../assets/models/Map.js';
-import HazardReport from '../../assets/models/HazardReport.js';
 import getHazardDetail from '../../assets/helpers/get-hazard-detail.js';
-import DateFormat from '../../assets/models/DateFormat.js';
-import { getUserLocation, setUserLocation } from '../../assets/helpers/user-geocoordinates.js';
+import { getUserSession } from '../../assets/helpers/storage.js';
+import injectHTML from '../../assets/helpers/inject-html.js';
+import injectHeader from '../../assets/helpers/inject-header.js';
+import loadIcons from '../../assets/helpers/load-icons.js';
+import showLoginModal from '../../assets/helpers/showLoginModal.js';
 
 // URL params
 const url = new URL(window.location.href);
@@ -333,7 +334,7 @@ const getReportApiCall = async (lat, lng) => {
   // search position
   const positionChange = searchInput.dataset.positionChange === 'true';
 
-  const url = `hazard-report?lat=${positionChange ? positionSecondary.lat : lat}&lng=${positionChange ? positionSecondary.lng : lng}&type=recent&active_only=true`;
+  const url = `hazard-report?lat=${positionChange ? positionSecondary.lat : lat}&lng=${positionChange ? positionSecondary.lng : lng}&active_only=true`;
 
   const res = await apiRequest(url, { method: 'GET' });
   reports = res.data?.results;

@@ -65,8 +65,8 @@ class ReportCardContainer {
   getHeading() {
     const icon = this.settings?.detail;
     const contentHTML = `
-			<span class="btn__icon report-card__heading__icon" style="background-color: ${icon.iconBackround}">
-				<i class="${icon.icon}" style="width:1.5rem; height:1.5rem; background-color: var(--white)"></i>
+			<span class="btn__icon report-card__heading__icon" style="background-color: ${icon?.iconBackround}">
+				<i class="${icon?.icon}" style="width:1.5rem; height:1.5rem; background-color: var(--white)"></i>
 			</span>
       <p class="text-body-1 semibold">${this.hazard}</p>
     `;
@@ -116,19 +116,19 @@ class ReportCardContainer {
         ${this.location}
       </p>
     </div>
-  
+
     <div class="report-card__date_time">
       <div class="report-card__details">
         <i class="icon-date" style="background-color: var(--neutral-400)"></i>
         <p class="text-body-2 regular">${this.getDateFormatted()}</p>
       </div>
-  
+
       <div class="report-card__details">
         <i class="icon-time" style="background-color: var(--neutral-400)"></i>
         <p class="text-body-2 regular">${this.getTimeFormatted()}</p>
       </div>
     </div>
-  
+
     <div class="report-card__details">
       <i class="icon-distance" style="background-color: var(--neutral-400)"></i>
       <p class="text-body-2 regular">${this.distance} km away</p>
@@ -157,7 +157,7 @@ class ReportCardContainer {
   }
 
   getDescription() {
-    const contentHTML = `	
+    const contentHTML = `
     <p class="text-body-4 regular">Description</p>
 		<p class="text-body-2 regular">${this.comment}</p>`;
     const div = document.createElement('div');
@@ -167,7 +167,7 @@ class ReportCardContainer {
   }
 
   getMyReportButtons() {
-    const contentHTML = `	
+    const contentHTML = `
     ${ToggleSwitch(this.id, !this.deleted_at)}
     <button class="btn btn-tertiary text-body-3 medium" onclick="window.location.href='/pages/report-hazard/index.html?id=${this.id}#review-report'">
       <i class="icon-edit"></i>
@@ -184,7 +184,7 @@ class ReportCardContainer {
     <p class="text-body-4 regular">
     Reported by ${this.createdByUserLoggedIn ? 'You' : ''}
   </p>
-  
+
   ${
     !this.createdByUserLoggedIn
       ? `
@@ -199,7 +199,7 @@ class ReportCardContainer {
   `
       : ''
   }
-  
+
   <div
     class="${this.createdByUserLoggedIn ? 'hidden' : ''}"
   ></div>`;
@@ -225,7 +225,7 @@ class ReportCardContainer {
       <i class="icon-flag"></i>
       Flag report
     </button>
-  
+
     <div id="flagReportMessage" class="message error hidden">
       <i class="icon-flag message__icon"></i>
       <p class="message__content text-body-3 medium">
