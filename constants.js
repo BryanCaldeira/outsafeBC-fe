@@ -1,4 +1,4 @@
-export const API_URL = 'https://amazing-bubblegum-c515bc.netlify.app/.netlify/functions';
+export const API_URL = 'https://outsafebc-dev-api.netlify.app/.netlify/functions';
 
 // export const API_URL = 'http://localhost:9999/.netlify/functions';
 
