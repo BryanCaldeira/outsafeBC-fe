@@ -288,8 +288,8 @@ const getCategories = async () => {
     let arrayIcons = [];
 
     data.forEach((category) => {
-      if (category.name && category.ui_settings.detail) {
-        arrayIcons.push(category.ui_settings.detail.icon);
+      if (category.name) {
+        arrayIcons.push(category.ui_settings.icon);
       }
     });
 
