@@ -5,7 +5,7 @@ export const API_URL = 'https://outsafebc-dev-api.netlify.app/.netlify/functions
 
 export const USER_STORAGE = 'user';
 
-export const GOOGLE_ID = '319234793704-njbchgvs61hl4qvk39kt7njekeluf172.apps.googleusercontent.com';
+export const GOOGLE_ID = '515703563628-ltn67e7rdhlrdukrein08g27jqti7to5.apps.googleusercontent.com';
 
 export const JAWG_ACCESS_TOKEN = 'LESUiiQclmPkbbaFTaPx6M64QWgnmvYXQQXuIcownKAbCziOC3kyYUdEEqGn9wT3';
 
