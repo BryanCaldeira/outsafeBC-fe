@@ -829,7 +829,7 @@ const submitReport = async () => {
         }),
       });
 
-      console.log(`RESPONSE: ${response.json()}`);
+      console.log(`RESPONSE: ${await response.json()}`);
 
       if (response.ok) {
         allowRedirect = true;
