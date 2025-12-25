@@ -33,7 +33,7 @@ window.onload = function () {
 
         const { data } = await response.json();
 
-        if (data?.id) {
+        if (data) {
           AlertPopup.show('Welcome back!');
           setUserSession(data);
           window.location.replace('/');
