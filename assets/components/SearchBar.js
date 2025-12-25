@@ -49,7 +49,7 @@ const SearchBar = ({ categories }) => {
           <div class="sb-categories">
             <div class="sb-categories-wrapper">
             ${
-              categories.length
+              categories?.length
                 ? categories
                     ?.map((item) => {
                       return QuickFilter({
